@@ -1,13 +1,95 @@
+@import "materialize-css/dist/css/materialize.min.css";
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  min-height: 100vh;
+  color: #dd9a5a;
+  background-color: rgba(19, 30, 37, 1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background-size: 400px 400px;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  right: 0;
+  background-image: radial-gradient(
+    circle farthest-corner at 104.1% -13.8%,
+    rgba(255, 124, 0, 1) 0%,
+    rgba(255, 124, 0, 1) 28.9%,
+    rgba(255, 163, 77, 1) 28.9%,
+    rgba(255, 163, 77, 1) 48.4%,
+    rgba(19, 30, 37, 1) 48.5%,
+    rgba(19, 30, 37, 1) 66%
+  );
+}
+
+body::after {
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(
+    circle farthest-corner at -6.9% 116.2%,
+    rgba(255, 124, 0, 1) 0%,
+    rgba(255, 124, 0, 1) 28.9%,
+    rgba(255, 163, 77, 1) 28.9%,
+    rgba(255, 163, 77, 1) 48.4%,
+    rgba(19, 30, 37, 1) 48.5%,
+    rgba(19, 30, 37, 1) 66%
+  );
+}
+
+.app {
+  padding-bottom: 60px;
+}
+
+h1 {
+  text-shadow: #1b0e02 1px 4px 4px;
+}
+
+span {
+  color: #abb5bd;
+}
+
+.app .input-field input[type="text"] {
+  color: #abb5bd;
+}
+
+.app .input-field input[type="text"]:focus {
+  color: #dd9a5a;
+  border-bottom: 1px solid #dd9a5a;
+  box-shadow: 0 1px 0 0 #dd9a5a;
+}
+
+.app .input-field input[type="text"]:focus + label {
+  color: #dd9a5a;
+}
+
+.todo {
+  margin-bottom: 1.5rem;
+}
+
+.todo.status span {
+  text-decoration: line-through;
+}
+
+.todo label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #06253b;
+  padding: 1rem;
+}
+
+.todo i {
+  z-index: 2;
 }
